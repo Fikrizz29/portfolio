@@ -165,65 +165,6 @@ $(function () {
     );
   });
 
-  // Animation Cards Stack
-  // Grid 2x
-  gsap.set(".animate-card-2", { y: 100, opacity: 0 });
-
-  ScrollTrigger.batch(".animate-card-2", {
-    interval: 0.1,
-    batchMax: 2,
-    once: true, // hanya animasi sekali
-    onEnter: (batch) =>
-      gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        ease: "sine",
-        stagger: { each: 0.15, grid: [1, 2] },
-        overwrite: true,
-      }),
-  });
-
-  // Grid 3x (jika memang ada class .animate-card-3, tambahkan juga)
-  gsap.set(".animate-card-3", { y: 100, opacity: 0 });
-
-  ScrollTrigger.batch(".animate-card-3", {
-    interval: 0.1,
-    batchMax: 3,
-    once: true,
-    onEnter: (batch) =>
-      gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        ease: "sine",
-        stagger: { each: 0.15, grid: [1, 3] },
-        overwrite: true,
-      }),
-  });
-
-  // Grid 5x
-  gsap.set(".animate-card-5", { y: 50, opacity: 0 });
-
-  ScrollTrigger.batch(".animate-card-5", {
-    interval: 0.1,
-    batchMax: 5,
-    once: true,
-    onEnter: (batch) =>
-      gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        ease: "sine",
-        stagger: { each: 0.15, grid: [1, 5] },
-        overwrite: true,
-      }),
-  });
-
-  // Optional: Reset posisi saat refresh agar tidak stuck di posisi awal
-  ScrollTrigger.addEventListener("refreshInit", () => {
-    gsap.set(".animate-card-2", { y: 0, opacity: 1 });
-    gsap.set(".animate-card-3", { y: 0, opacity: 1 });
-    gsap.set(".animate-card-5", { y: 0, opacity: 1 });
-  });
-
   // --------------------------------------------- //
   // Scroll Animations End
   // --------------------------------------------- //
